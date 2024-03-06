@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="./signin.css" />
+    <title>My To Do List</title>
+  </head>
+  <body>
+    <main>
+      <header>
+        <h1>하람의 Todo List</h1>
+      </header>
+
+      <section id="signin">
+        <form>
+          <div>
+            <input id="id" name="id" placeholder="아이디" />
+            <input id="password" name="password" type="password" placeholder="비밀번호" />
+            <button id="login-button" type="submit">로그인</button>
+          </div>
+
+          <p id="go-signup">회원가입 하러 가기</p>
+        </form>
+      </section>
+
+      <footer>
+        <p>made by haram</p>
+      </footer>
+    </main>
+
+    <script type="text/javascript">
+      let id = "";
+      let password = "";
+      let idInput = document.getElementById("id");
+      idInput.addEventListener("change", (e) => {
+        id = e.target.value;
+      });
+
+      let passwordInput = document.getElementById("password");
+      passwordInput.addEventListener("change", (e) => {
+        password = e.target.value;
+      });
+
+      let loginButton = document.getElementById("login-button");
+      loginButton.addEventListener("click", () => {
+        event.preventDefault();
+        console.log("id: " + id, "password: " + password);
+      });
+
+      let goSignupButton = document.getElementById("go-signup");
+      goSignupButton.addEventListener("click", () => {
+        event.preventDefault();
+        console.log("회원가입 페이지로 이동합니다.");
+      });
+    </script>
+  </body>
+</html>

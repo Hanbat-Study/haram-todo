@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="./signup.css" />
+    <title>My To Do List</title>
+  </head>
+  <body>
+    <main>
+      <header>
+        <h1>하람의 Todo List</h1>
+      </header>
+
+      <section id="signup">
+        <form>
+          <div>
+            <p>이름:</p>
+            <input type="text" id="name" name="name" />
+          </div>
+
+          <div>
+            <p>성별:</p>
+            <div>
+              <input type="radio" id="female" name="female" /><label>여자</label>
+              <input type="radio" id="male" name="male" /> <label>남자</label>
+            </div>
+          </div>
+
+          <div>
+            <p>생일:</p>
+            <input type="date" id="birthday" name="birthday" />
+          </div>
+
+          <div>
+            <p>고향:</p>
+            <select name="hometown" id="hometown">
+              <option value="seoul">서울</option>
+              <option value="incheon">인천</option>
+              <option value="deajeon">대전</option>
+              <option value="sejong">세종</option>
+              <option value="gwangju">광주</option>
+              <option value="deagu">대구</option>
+              <option value="ulsan">울산</option>
+              <option value="busan">부산</option>
+              <option value="jeju">제주</option>
+              <option value="gyeonggi">경기도</option>
+              <option value="gangwon">강원도</option>
+              <option value="chungcheong">충청도</option>
+              <option value="jeonlla">전라도</option>
+              <option value="gyeongsang">경상도</option>
+            </select>
+          </div>
+
+          <div>
+            <p>아이디:</p>
+            <input type="text" id="id" name="id" />
+          </div>
+
+          <div>
+            <p>비밀번호:</p>
+            <input type="password" id="password" name="password" />
+          </div>
+
+          <button id="signup-button" type="submit">회원가입</button>
+          <p id="go-signin">로그인 하러 가기</p>
+        </form>
+      </section>
+
+      <footer>
+        <p>made by haram</p>
+      </footer>
+    </main>
+
+    <script type="text/javascript">
+      let name, gender, birthday, hometown, id, password;
+
+      let nameInput = document.getElementById("name");
+      let femaleChecked = document.getElementById("female");
+      let maleChecked = document.getElementById("male");
+      let birthdayInput = document.getElementById("birthday");
+      let hometownInput = document.getElementById("hometown");
+      let idInput = document.getElementById("id");
+      let passwordInput = document.getElementById("password");
+
+      nameInput.addEventListener("change", (e) => {
+        name = e.target.value;
+      });
+      femaleChecked.addEventListener("change", (e) => {
+        gender = 0;
+      });
+      maleChecked.addEventListener("change", (e) => {
+        gender = 0;
+      });
+      birthdayInput.addEventListener("change", (e) => {
+        birthday = e.target.value;
+      });
+      hometownInput.addEventListener("change", (e) => {
+        hometown = e.target.value;
+      });
+      idInput.addEventListener("change", (e) => {
+        id = e.target.value;
+      });
+      passwordInput.addEventListener("change", (e) => {
+        password = e.target.value;
+      });
+
+      let signupButton = document.getElementById("signup-button");
+      signupButton.addEventListener("click", () => {
+        event.preventDefault();
+        console.log(
+          "이름: " +
+            name +
+            "\n성별: " +
+            (gender === 0 ? "여자" : "남자") +
+            "\n생일: " +
+            birthday +
+            "\n고향: " +
+            hometown +
+            "\n아이디: " +
+            id +
+            "\n비밀 번호: " +
+            password
+        );
+      });
+
+      let goSigninButton = document.getElementById("go-signin");
+      goSigninButton.addEventListener("click", () => {
+        event.preventDefault();
+        console.log("로그인 페이지로 이동합니다.");
+      });
+    </script>
+  </body>
+</html>
