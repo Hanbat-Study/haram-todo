@@ -45,8 +45,8 @@ class SignIn {
   }
 
   navigateTo(page) {
-      console.log(`${page}로 이동합니다.`); 
+    console.log(`${page}로 이동합니다.`);
   }
 }
 
-s = new SignIn(document);
+new SignIn(document);
