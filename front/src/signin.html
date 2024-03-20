@@ -4,7 +4,10 @@
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <link rel="stylesheet" href="../assets/css/index.css" />
     <link rel="stylesheet" href="../assets/css/signin.css" />
+    <script src="../src/js/signin.js" defer></script>
     <title>My To Do List</title>
   </head>
   <body>
@@ -13,15 +16,20 @@
         <h1>하람의 Todo List</h1>
       </header>
 
-      <section id="signin">
-        <form action="/haram-todo/front/signin.html" method="get"> 
-          <div> 
-            <input id="id" name="id" placeholder="아이디" />
-            <input id="password" name="password" type="password" placeholder="비밀번호" />
-            <button id="login-button" type="submit">로그인</button>
+      <section id="signin" method="post">
+        <form id="signinForm" action="/front/src/todo.html" method="post">
+          <div>
+            <input id="loginId" name="loginId" placeholder="아이디" />
+            <input
+              id="password"
+              name="password"
+              type="password"
+              placeholder="비밀번호"
+            />
+            <button id="signinButton" type="submit">로그인</button>
           </div>
 
-          <p id="go-signup">회원가입 하러 가기</p>
+          <a id="goSignup" href="/front/src/signup.html">회원가입 하러 가기</a>
         </form>
       </section>
 
@@ -29,6 +37,5 @@
         <p>made by haram</p>
       </footer>
     </main>
-    <script src="../js/signin.js"></script>
   </body>
 </html>
